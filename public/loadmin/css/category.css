@@ -1,0 +1,974 @@
+```css
+/* =========================================================
+   ADMIN CATEGORIES PAGE
+========================================================= */
+
+.category-page {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    margin-bottom: 28px;
+}
+
+.page-header > div {
+    min-width: 0;
+}
+
+.page-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+
+    color: #9ca3af;
+}
+
+.page-header h2 {
+    margin: 0;
+
+    font-size: 28px;
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    color: #111827;
+}
+
+.page-header p {
+    margin: 7px 0 0;
+
+    font-size: 13px;
+
+    color: #6b7280;
+}
+
+
+/* =========================================================
+   ADD CATEGORY BUTTON
+========================================================= */
+
+.add-category-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    min-height: 40px;
+
+    padding: 10px 16px;
+
+    border: 0;
+    border-radius: 9px;
+
+    background: #073d0a;
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.add-category-btn:hover {
+    color: #ffffff;
+
+    opacity: 0.94;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   SUMMARY CARDS
+========================================================= */
+
+.category-stats {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin-bottom: 22px;
+}
+
+.category-stat-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    min-width: 0;
+
+    padding: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #edf0f4;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 4px 18px rgba(15, 23, 42, 0.04);
+}
+
+.category-stat-icon {
+    width: 44px;
+    height: 44px;
+
+    flex: 0 0 44px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: #f3f4f6;
+
+    color: #374151;
+
+    font-size: 16px;
+}
+
+.category-stat-card span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 12px;
+
+    color: #6b7280;
+}
+
+.category-stat-card h3 {
+    margin: 0;
+
+    font-size: 23px;
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    color: #111827;
+}
+
+
+/* =========================================================
+   MAIN CATEGORY PANEL
+========================================================= */
+
+.category-panel {
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #edf0f4;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 4px 20px rgba(15, 23, 42, 0.04);
+}
+
+
+/* =========================================================
+   PANEL HEADER
+========================================================= */
+
+.category-panel-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 22px 24px;
+
+    border-bottom: 1px solid #edf0f4;
+}
+
+.category-panel-header > div:first-child {
+    min-width: 0;
+}
+
+.category-panel-header h3 {
+    margin: 0;
+
+    font-size: 16px;
+
+    line-height: 1.3;
+
+    font-weight: 700;
+
+    color: #111827;
+}
+
+.category-panel-header p {
+    margin: 5px 0 0;
+
+    font-size: 12px;
+
+    color: #9ca3af;
+}
+
+
+/* =========================================================
+   SEARCH + FILTER
+========================================================= */
+
+.category-tools {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+.category-search {
+    position: relative;
+
+    width: 220px;
+}
+
+.category-search i {
+    position: absolute;
+
+    left: 12px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #9ca3af;
+
+    font-size: 12px;
+
+    pointer-events: none;
+}
+
+.category-search input {
+    display: block;
+
+    width: 100%;
+    height: 38px;
+
+    box-sizing: border-box;
+
+    padding: 0 12px 0 34px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.category-search input::placeholder {
+    color: #9ca3af;
+}
+
+.category-search input:focus {
+    border-color: #9ca3af;
+
+    box-shadow:
+        0 0 0 3px rgba(156, 163, 175, 0.08);
+}
+
+.status-filter {
+    height: 38px;
+
+    box-sizing: border-box;
+
+    padding: 0 12px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #374151;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+.status-filter:focus {
+    border-color: #9ca3af;
+}
+
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.category-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* =========================================================
+   CATEGORY TABLE
+========================================================= */
+
+.category-table {
+    display: table !important;
+
+    width: 100% !important;
+
+    min-width: 850px;
+
+    margin: 0;
+
+    padding: 0;
+
+    border-collapse: collapse !important;
+
+    border-spacing: 0;
+
+    table-layout: fixed;
+
+    background: #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   COLUMN WIDTHS
+--------------------------------------------------------- */
+
+.category-table th:nth-child(1),
+.category-table td:nth-child(1) {
+    width: 6%;
+}
+
+.category-table th:nth-child(2),
+.category-table td:nth-child(2) {
+    width: 27%;
+}
+
+.category-table th:nth-child(3),
+.category-table td:nth-child(3) {
+    width: 19%;
+}
+
+.category-table th:nth-child(4),
+.category-table td:nth-child(4) {
+    width: 14%;
+}
+
+.category-table th:nth-child(5),
+.category-table td:nth-child(5) {
+    width: 20%;
+}
+
+.category-table th:nth-child(6),
+.category-table td:nth-child(6) {
+    width: 14%;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.category-table thead {
+    display: table-header-group !important;
+
+    width: 100%;
+
+    background: #f9fafb;
+}
+
+.category-table thead tr {
+    display: table-row !important;
+
+    width: 100%;
+}
+
+.category-table th {
+    display: table-cell !important;
+
+    box-sizing: border-box;
+
+    padding: 13px 18px;
+
+    text-align: left;
+
+    vertical-align: middle;
+
+    border: 0;
+
+    border-bottom: 1px solid #edf0f4;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+
+    letter-spacing: 0.6px;
+
+    text-transform: uppercase;
+
+    color: #6b7280;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   TABLE BODY
+========================================================= */
+
+.category-table tbody {
+    display: table-row-group !important;
+
+    width: 100%;
+}
+
+.category-table tbody tr {
+    display: table-row !important;
+
+    width: 100%;
+
+    background: #ffffff;
+
+    transition:
+        background 0.2s ease;
+}
+
+.category-table tbody tr:hover {
+    background: #fafafa;
+}
+
+.category-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.category-table td {
+    display: table-cell !important;
+
+    box-sizing: border-box;
+
+    padding: 15px 18px;
+
+    vertical-align: middle;
+
+    border: 0;
+
+    border-bottom: 1px solid #f0f2f5;
+
+    font-size: 13px;
+
+    line-height: 1.4;
+
+    color: #374151;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   CATEGORY NUMBER
+========================================================= */
+
+.category-number {
+    display: inline-block;
+
+    font-size: 12px;
+
+    color: #9ca3af;
+}
+
+
+/* =========================================================
+   CATEGORY INFO
+========================================================= */
+
+.category-info {
+    display: flex !important;
+
+    align-items: center;
+
+    gap: 11px;
+
+    min-width: 0;
+}
+
+.category-avatar {
+    width: 38px;
+    height: 38px;
+
+    flex: 0 0 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #f3f4f6;
+
+    color: #4b5563;
+
+    font-size: 14px;
+}
+
+.category-info > div:last-child {
+    min-width: 0;
+}
+
+.category-info strong {
+    display: block;
+
+    max-width: 100%;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    font-size: 13px;
+
+    line-height: 1.3;
+
+    font-weight: 600;
+
+    color: #111827;
+}
+
+.category-info span {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 10px;
+
+    line-height: 1.2;
+
+    color: #9ca3af;
+}
+
+
+/* =========================================================
+   SLUG
+========================================================= */
+
+.category-slug {
+    display: inline-block;
+
+    max-width: 100%;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    box-sizing: border-box;
+
+    padding: 5px 8px;
+
+    border-radius: 6px;
+
+    background: #f5f6f8;
+
+    color: #6b7280;
+
+    font-family: monospace;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.category-status {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    box-sizing: border-box;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+.category-status > span {
+    width: 6px;
+    height: 6px;
+
+    flex: 0 0 6px;
+
+    border-radius: 50%;
+}
+
+.category-status.active {
+    background: #ecfdf3;
+
+    color: #15803d;
+}
+
+.category-status.active > span {
+    background: #22c55e;
+}
+
+.category-status.inactive {
+    background: #f3f4f6;
+
+    color: #6b7280;
+}
+
+.category-status.inactive > span {
+    background: #9ca3af;
+}
+
+
+/* =========================================================
+   CREATED DATE
+========================================================= */
+
+.created-date {
+    display: block;
+}
+
+.created-date strong {
+    display: block;
+
+    font-size: 12px;
+
+    line-height: 1.3;
+
+    font-weight: 500;
+
+    color: #374151;
+}
+
+.created-date span {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 10px;
+
+    line-height: 1.2;
+
+    color: #9ca3af;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.category-actions {
+    display: flex !important;
+
+    align-items: center;
+
+    gap: 7px;
+
+    white-space: nowrap;
+}
+
+.table-action {
+    width: 34px;
+    height: 34px;
+
+    display: inline-flex !important;
+
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    padding: 0;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #6b7280;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.table-action:hover {
+    background: #f3f4f6;
+
+    border-color: #d1d5db;
+
+    color: #111827;
+
+    transform: translateY(-1px);
+}
+
+.table-action.delete:hover {
+    background: #fef2f2;
+
+    border-color: #fecaca;
+
+    color: #dc2626;
+}
+
+
+/* =========================================================
+   TABLE FOOTER
+========================================================= */
+
+.category-table-footer {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    min-height: 52px;
+
+    box-sizing: border-box;
+
+    padding: 12px 20px;
+
+    border-top: 1px solid #edf0f4;
+
+    background: #fafafa;
+
+    font-size: 11px;
+
+    color: #9ca3af;
+}
+
+.category-table-footer strong {
+    color: #374151;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.category-empty {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 350px;
+
+    padding: 50px 25px;
+
+    text-align: center;
+}
+
+.empty-icon {
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 16px;
+
+    background: #f3f4f6;
+
+    color: #9ca3af;
+
+    font-size: 24px;
+}
+
+.category-empty h3 {
+    margin: 0;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    color: #111827;
+}
+
+.category-empty p {
+    max-width: 400px;
+
+    margin: 8px 0 20px;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    color: #9ca3af;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .category-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .category-panel-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .category-tools {
+        width: 100%;
+    }
+
+    .category-search {
+        flex: 1;
+
+        width: auto;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .page-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .page-header h2 {
+        font-size: 24px;
+    }
+
+    .add-category-btn {
+        width: 100%;
+    }
+
+    .category-stats {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .category-panel-header {
+        padding: 18px;
+    }
+
+    .category-tools {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .category-search {
+        width: 100%;
+    }
+
+    .status-filter {
+        width: 100%;
+    }
+
+    .category-table th,
+    .category-table td {
+        padding: 13px 15px;
+    }
+
+}
+
